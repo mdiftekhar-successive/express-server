@@ -1,0 +1,1 @@
+import haspermission from "./permission";
