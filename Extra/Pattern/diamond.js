@@ -1,4 +1,4 @@
-let n = 5;
+export default function diamond(n) {
 let str = "";
 for (let i = 1; i <= n; i++) {
   for (let j = n; j > i; j--) {
@@ -19,3 +19,4 @@ for (let i = 1; i <= n - 1; i++) {
   str += "\n";
 }
 console.log(str);
+}
