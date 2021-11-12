@@ -1,14 +1,14 @@
 export default function equilateraltriangle(n) {
-let str = "";
-for (let i = 1; i <= n; i++) {
-  for (let j = 1; j <= n - i; j++) {
-    str += " ";
+let triangle = "";
+for ( let rows = 1; rows <= n; rows++ ) {
+  for ( let cols = 1; cols <= n - rows; cols++ ) {
+    triangle += " ";
   }
   
-  for (let k = 0; k < i; k++) {
-    str += "* ";
+  for ( let star = 0; star < rows; star++ ) {
+    triangle += "* ";
   }
-  str += "\n";
+  triangle += "\n";
 }
-console.log(str);
+console.log(triangle);
 }

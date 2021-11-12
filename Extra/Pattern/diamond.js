@@ -1,22 +1,22 @@
 export default function diamond(n) {
-let str = "";
-for (let i = 1; i <= n; i++) {
-  for (let j = n; j > i; j--) {
-    str += " ";
+let diamond = "";
+for ( let rows = 1; rows <= n; rows++ ) {
+  for ( let cols = n; cols > rows; cols-- ) {
+    diamond += " ";
   }
-  for (let k = 0; k < i; k++) {
-    str += "* ";
+  for ( let star = 0; star < rows; star++ ) {
+    diamond += "* ";
   }
-  str += "\n";
+  diamond += "\n";
 }
-for (let i = 1; i <= n - 1; i++) {
-  for (let j = 0; j < i; j++) {
-    str += " ";
+for ( let rows = 1; rows <= n - 1; rows++ ) {
+  for ( let cols = 0; cols < rows; cols++ ) {
+    diamond += " ";
   }
-  for (let k = (n - i); k > 0; k--) {
-    str += "* ";
+  for ( let star = (n - rows); star > 0; star-- ) {
+    diamond += "* ";
   }
-  str += "\n";
+  diamond += "\n";
 }
-console.log(str);
+console.log(diamond);
 }
