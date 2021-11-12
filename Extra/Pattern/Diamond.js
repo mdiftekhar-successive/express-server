@@ -1,7 +1,7 @@
-export default function diamond(n) {
+export default function Diamond(size) {
 let diamond = "";
-for ( let rows = 1; rows <= n; rows++ ) {
-  for ( let cols = n; cols > rows; cols-- ) {
+for ( let rows = 1; rows <= size; rows++ ) {
+  for ( let cols = size; cols > rows; cols-- ) {
     diamond += " ";
   }
   for ( let star = 0; star < rows; star++ ) {
@@ -9,11 +9,11 @@ for ( let rows = 1; rows <= n; rows++ ) {
   }
   diamond += "\n";
 }
-for ( let rows = 1; rows <= n - 1; rows++ ) {
+for ( let rows = 1; rows <= size - 1; rows++ ) {
   for ( let cols = 0; cols < rows; cols++ ) {
     diamond += " ";
   }
-  for ( let star = (n - rows); star > 0; star-- ) {
+  for ( let star = (size - rows); star > 0; star-- ) {
     diamond += "* ";
   }
   diamond += "\n";

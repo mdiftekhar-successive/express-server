@@ -1,17 +1,18 @@
-import {ValidateEmail} from './helpers';
-export default function validateuser(users) {
+import { ValidateEmail } from './Helpers';
+
+export default function ValidateUser (users) {
     let ValidEmail =[];
     let ValidEmailcount = 0;
     let InvalidEmail =[];
     let InvalidEmailcount = 0;
-    for(let i = 0; i < users.length; i++) {
-        if (ValidateEmail(users[i])) {
+    for(let char = 0; char < users.length; char++) {
+        if (ValidateEmail(users[char])) {
             ValidEmailcount++;
-            ValidEmail.push(users[i]);
+            ValidEmail.push(users[char]);
         } 
         else {
             InvalidEmailcount++;
-            InvalidEmail.push(users[i]);
+            InvalidEmail.push(users[char]);
         }
     }
     console.log('Valid Email :', ValidEmail);

@@ -1,3 +1,3 @@
-export {default as diamond} from "./diamond";
-export {default as equilateraltriangle} from "./equilateral";
-export {default as pyramid} from "./pyramid";
+export { default as Diamond } from "./Diamond";
+export { default as EquilateralTriangle } from "./Equilateral";
+export { default as Pyramid } from "./Pyramid";
