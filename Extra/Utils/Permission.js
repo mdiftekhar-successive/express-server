@@ -12,4 +12,4 @@ export default function HasPermission( Module, Role, PermissionType ) {
         return false;
     }
 }
-    
+  
