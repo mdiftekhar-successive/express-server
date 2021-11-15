@@ -1,12 +1,12 @@
-import { ValidateEmail } from './Helpers';
+import { validateEmail } from "./helpers";
 
-export default function ValidateUser (users) {
+export default function validateUser (users) {
     let ValidEmail =[];
     let ValidEmailcount = 0;
     let InvalidEmail =[];
     let InvalidEmailcount = 0;
     for(let char = 0; char < users.length; char++) {
-        if (ValidateEmail(users[char])) {
+        if (validateEmail(users[char])) {
             ValidEmailcount++;
             ValidEmail.push(users[char]);
         } 

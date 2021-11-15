@@ -1,4 +1,4 @@
-export default function EquilateralTriangle(size) {
+export default function equilateralTriangle(size) {
 let triangle = "";
 for ( let rows = 1; rows <= size; rows++ ) {
   for ( let cols = 1; cols <= size - rows; cols++ ) {

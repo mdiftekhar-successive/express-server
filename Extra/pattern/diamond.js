@@ -1,4 +1,4 @@
-export default function Diamond(size) {
+export default  function diamond(size) {
 let diamond = "";
 for ( let rows = 1; rows <= size; rows++ ) {
   for ( let cols = size; cols > rows; cols-- ) {

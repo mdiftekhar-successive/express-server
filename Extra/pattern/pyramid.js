@@ -1,7 +1,7 @@
-export default function Pyramid(type, rows) {
+export default function pyramid(type, rows) {
     let size = rows;
     let pyramid = '';
-    if (type =='HalfPyramid') {
+    if (type =='halfPyramid') {
         for( let row = 1; row <= size; row++ ) {
             for( let col = 1; col <= row; col++ ) {
                 pyramid += col+' ';
@@ -11,7 +11,7 @@ export default function Pyramid(type, rows) {
         console.log(pyramid);
     }
     
-else if ( type == 'FullPyramid' ) {
+else if ( type == 'fullPyramid' ) {
 
 let pyramid = "";
 for( let row = 1; row <= size; row++ ) {
@@ -34,7 +34,7 @@ for( let row = 1; row <= size; row++ ) {
 console.log(pyramid);
 }
 
-else if ( type == 'DifferentPyramid' ) {
+else if ( type == 'differentPyramid' ) {
  let pyramid = "";
 for ( let row = 1; row <= size; row++) {
   for ( let space = 1; space <= 2 * size -row-2; space++ ) {
