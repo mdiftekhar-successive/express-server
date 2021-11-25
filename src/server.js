@@ -1,5 +1,6 @@
 import { errorHandler }  from './libs/routes/errorHandler';
 import { notFound } from './libs/routes/notFoundRoute';
+import router from './router';
 require('dotenv').config();
 const bodyParser = require ('body-parser');
 const express = require('express');
@@ -13,6 +14,7 @@ export class Server {
         app.get('/health-check',function(req,res){
         res.send("i am ok!");
     });
+        app.use(router);
         app.use(errorHandler);
         app.use(notFound);
     }
