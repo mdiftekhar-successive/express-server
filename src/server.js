@@ -5,6 +5,7 @@ require('dotenv').config();
 const bodyParser = require ('body-parser');
 const express = require('express');
 const app = express();
+app.use(express.json());
 export class Server {
     constructor(config) {
         app.listen(config);
@@ -31,3 +32,9 @@ export class Server {
           });
     }
 }
+
+
+// const middleware = (req , res, next)=>{
+//        res.update("");
+//        next();
+// }

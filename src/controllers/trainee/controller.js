@@ -1,30 +1,17 @@
-const express = require('express');
-const apps = new express.Router();
 class TraineeController {
- 
-    getRoute() {
-        apps.get('/api/get',function(req,res){
+     create = function(req,res){
+    //  console.log("🚀 ~ file: controller.js ~ line 3 ~ TraineeController ~ req", req)
+            res.send({Data:"Here is your post  response call"});
+    }
+    get =  function(req,res){
         res.send({Data:"Here is your get  response call"});
-    });
-        return apps;
     }
-    postRoute() {
-        apps.post('/api/post',function(req,res){
-        res.send({Data:"User created"});
-    });
-      return apps;
-    }
-    putRoute() {
-        apps.put('/api/put',function(req,res){
+    update = function(req,res){
         res.send({Data:"User updated"});
-    });
-     return apps;
     }
-    deleteRoute() {
-        apps.delete('/api/delete',function(req,res){
+    delete = function(req,res){
         res.send({Data:"User deleted"});
-    });
-     return apps;
+   
     }
    
 }
