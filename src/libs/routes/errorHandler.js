@@ -1,4 +1,4 @@
-export const errorHandler = (req, res, next)=>{
+export const errorHandler = (req, res)=>{
  res.status(500).json({error: "Not Found",
  message: "error",
  status: 500,

@@ -16,8 +16,8 @@ export class Server {
         res.send("i am ok!");
     });
         app.use(router);
-        app.use(errorHandler);
         app.use(notFound);
+        app.use(errorHandler);
     }
     initBodyparser() {
         app.use(bodyParser.urlencoded({ extended : true }));
@@ -32,9 +32,3 @@ export class Server {
           });
     }
 }
-
-
-// const middleware = (req , res, next)=>{
-//        res.update("");
-//        next();
-// }

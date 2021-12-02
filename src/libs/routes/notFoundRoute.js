@@ -3,4 +3,5 @@ export const notFound = (req,res)=>{
     res.send({
         error:'NOT FOUND'
     });
+
 }

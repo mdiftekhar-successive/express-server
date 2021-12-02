@@ -21,13 +21,15 @@ const validation = {
     delete:{
         id:{
             required: true, 
-            errorMessage: 'Id is required', 
-            in: ['params']
+            in: ['params'],
+            errorMessage: 'Id is required'
         },
     },
     get:{
         skip:{
-            required: false, default: 0, number: true, 
+            number: true,
+            required: false, 
+            default: 0, 
             in: ['query'], 
             errorMessage: 'Skip is invalid'
         },
@@ -43,9 +45,9 @@ const validation = {
             in: ['body'] 
         },
         dataToUpdate: { 
-            in: ['body'], 
+            in: ['body'],  
             required: true, 
-            isObject: true, 
+            isObject: true,
             custom: function(dataToUpdate) {}, 
         },
     },
