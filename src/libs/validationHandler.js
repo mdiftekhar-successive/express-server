@@ -44,14 +44,15 @@ const validationHandler = (config) => (req, res, next) => {
 						}
 
 					}
-
 					else {
+						// console.log('--------->',key);
 					     if ((key in req[dataPlace]) && input !== null) {
 						break;
 					}
 					    else {
 						errMsg.push(`${key} is required`);
 						flag = true;
+						break;
 					}
 				
 				}
@@ -69,13 +70,36 @@ const validationHandler = (config) => (req, res, next) => {
 					}
 				}
 				case 'regex':
-					
-					if(typeof input != 'undefined') {
-						const REGEX = /^[a-zA-Z ]+$/.test(input);
-						if(REGEX == true) {
+					if(typeof input != 'undefined'){
+					    if(key == 'email') {
+						let emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(input);
+							if(emailRegex == true) {
+								break;
+							}
+							else {
+								errMsg.push(`${key} is not valid.. `);
+								flag = true;
+								break;
+							}
+						}	
+				else if(key == 'password') {
+						const passRegex = /^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{4,16}$/.test(input);
+						if(passRegex == true) {
 							break;
 						}
 						else {
+							errMsg.push(`${key} is not valid combination of character and number minimum four..`)
+							flag = true;
+							break;
+						}
+					}
+				}	
+				else {
+				let REGEX = /^[a-zA-Z ]+$/.test(input);
+					if(REGEX == true) {
+						break;
+					}
+					else {
 						errMsg.push(`${key} is not appropriate..`);
 						flag = true;
 						break;
@@ -97,6 +121,7 @@ const validationHandler = (config) => (req, res, next) => {
 						break;
 					}
 					break;
+
 			}
 		}
 	}
