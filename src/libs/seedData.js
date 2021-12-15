@@ -1,7 +1,6 @@
 import users from "../repositories/user /userModel";
 const bcrypt = require('bcrypt');
 export const seed = async (req,res,next) => {
-  console.log('Inside Seed Data');
   const saltRounds = 10;
   const salt = await bcrypt.genSalt(saltRounds);
   const hash = await bcrypt.hash('Training@123', salt);
@@ -16,7 +15,6 @@ export const seed = async (req,res,next) => {
    
     try {
       const count= await users.countDocuments();
-      console.log('count is -----', count);
       if (count === 0) {
         let data = new users(user);
         try {
@@ -27,7 +25,7 @@ export const seed = async (req,res,next) => {
             res.send(err);
         }
       }
-      else{
+      else {
           next();
       }
     } catch (error) {

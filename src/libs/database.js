@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 class Database {
-  open (mongoUrl){
+  open (mongoUrl) {
     let flag;
     flag = mongoose.connect(mongoUrl)
     .then(()=>{

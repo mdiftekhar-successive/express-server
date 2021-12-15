@@ -1,6 +1,7 @@
 import TraineeController  from'./controller';
 import validation from './validation';
 import validationHandler from '../../libs/validationHandler';
+import AuthMiddleWare from '../../libs/routes/authMiddleWare';
 const express = require('express');
 const traineeRouter = new express.Router();
 traineeRouter.route('/')
