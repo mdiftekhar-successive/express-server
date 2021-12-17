@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+import { seed } from './seedData';
 
 class Database {
   open (mongoUrl) {
@@ -6,6 +7,8 @@ class Database {
     flag = mongoose.connect(mongoUrl)
     .then(()=>{
       console.log("Database Connected Successfully..");
+      seed();
+      console.log("Seed Data is created Successfully in Database..");
       return true;
     })
     .catch( (err) => {

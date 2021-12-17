@@ -19,14 +19,10 @@ export const seed = async (req,res,next) => {
         let data = new users(user);
         try {
            await data.save();
-           res.send (' seedData is save successfully..')
         }
         catch(err) {
-            res.send(err);
+            console.log('Data is not save');
         }
-      }
-      else {
-          next();
       }
     } catch (error) {
       console.log('error is created', error);
