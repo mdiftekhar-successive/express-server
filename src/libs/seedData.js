@@ -1,5 +1,4 @@
-import users from "../repositories/user /userModel";
-const bcrypt = require('bcrypt');
+import User from "../repositories/user /userModel";
 export const seed = async (req,res,next) => {
  
   const user = {
@@ -8,12 +7,14 @@ export const seed = async (req,res,next) => {
     password: 'Iftekhar@9123',
     role: 'head-trainer',
     userId: 'iftekhar',
+    updatedBy:'Headtrainer',
+    createdBy:'Headtrainer'
   };
    
     try {
-      const count= await users.countDocuments();
+      const count= await User.countDocuments();
       if (count === 0) {
-        let data = new users(user);
+        let data = new User(user);
         try {
            await data.save();
         }
